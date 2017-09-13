@@ -27,5 +27,5 @@ If lighting is bad it will turn on bike light.
 If on the other hand there is wifi, Photon will connect to the internet to check weather conditions in current location and adjust bike light accordingly.
 
 ![projectSchema](https://user-images.githubusercontent.com/20126908/30375465-e9b5b3c0-9888-11e7-8ca1-4efdb8320327.png)
-![projectSchema](![Alt text](State_Diagram.jpg?raw=true "Optional Title"))
+![projectSchema](![Alt text](State_Diagram.jpg?raw=true "State Diagram for the product"))
 
