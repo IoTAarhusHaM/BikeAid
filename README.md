@@ -3,6 +3,9 @@ Project for IoT class, fall semester 2017/18
 
 ## Meeting the requirements
 sensors- light sensor (photoresistor), fsr (pressure sensor) on bike handle
+
+
+
 actuator- a bike light that we can control from photon
 using web data- weather conditions in the area where the photon is
 technical platform- photon
