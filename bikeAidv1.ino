@@ -4,19 +4,25 @@ int led = D0; // This is where LED is plugged in. The other side goes to a resis
 
 int photoresistor = A0; // This is where photoresistor is plugged in. The other side goes to the "power" pin (below).
 
+int touchSensor = A1; // analog output from the touch sensor
+
 int power = A5; // This is the other end of the photoresistor. The other side is plugged into the "photoresistor" pin (above).
 
-const int LIGHT_THRESHOLD = 100; //if there is that little light, we want to turn bike light on
-const int CHECKS_DELAY = 1000; // number of miliseconds to wait between consecutive state checks 
+const int LIGHT_THRESHOLD = 100; // if there is that little light, we want to turn bike light on
+const int CHECKS_DELAY = 2000; // number of miliseconds to wait between consecutive state checks 
+const int TOUCH_THRESHOLD = 800; // if value returned by the touch sensor is greater than this threshold, bike handle is being touched
 
 void setup() {
 
-    // First, declare all of pins.
+    // declaration of all pins
     pinMode(led,OUTPUT); // LED pin is output (lighting up the LED)
+    
     pinMode(photoresistor,INPUT);  //  photoresistor pin is input (reading the photoresistor)
-    pinMode(power,OUTPUT); // The pin powering the photoresistor is output (sending out consistent power)
+    pinMode(touchSensor,INPUT);  //  touch sensor pin is input (reading the sensor data)
 
-    //write one pin of the photoresistor to be the maximum possible, so that it can be used for power.
+    pinMode(power,OUTPUT); // The pin powering the photoresistor and touch sensor is output (sending out consistent power)
+
+    //write one pin of the photoresistor and touch sensor to be the maximum possible, so that it can be used for power.
     digitalWrite(power,HIGH);
 
     
@@ -42,8 +48,14 @@ bool checkBikeHandle(){
     //returns true if bike handle is touched
     //false otherwise
     
-    //TODO reading touch sensor data
-    return true;
+    bool handleTouched = false;
+    
+    int analogTouchValue = analogRead(touchSensor);
+    if(analogTouchValue > TOUCH_THRESHOLD){
+        handleTouched = true;
+    }
+    d_log("checkBikeHandle(): touch sensor value = ",analogTouchValue);
+    return handleTouched;
 }
 
 bool checkLight(){
@@ -129,6 +141,8 @@ void loop() {
         turnOnLight(false);
     }
 
+
+   
     //wait CHECKS_DELAY between checks
     delay(CHECKS_DELAY);
 
