@@ -31,5 +31,11 @@ If on the other hand there is wifi, Photon will connect to the internet to check
 ## State Diagram
 ![Alt text](State_Diagram.jpg?raw=true "State Diagram for the product")
 
-questions
-...checking wifi connectivity- is this generally done? (maybe this approach: https://community.zerynth.com/discussion/322/function-for-checking-wifi-connection ?)
+
+questions and problems
+
+
+... checking wifi connectivity- is this generally done? (maybe this approach: https://community.zerynth.com/discussion/322/function-for-checking-wifi-connection ?)
+
+
+... connecting photon and all the sensors and components to the breadbord (for now led light that's supposed to be lit while the program runs tends to go out because the wire connecting it to power doesn't touch photon's power supply at all times)
