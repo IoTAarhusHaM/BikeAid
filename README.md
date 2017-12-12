@@ -31,18 +31,28 @@ If on the other hand there is wifi, Photon will connect to the internet to check
 ## State Diagram
 ![Alt text](State_Diagram.jpg?raw=true "State Diagram for the product")
 
+
+20.10.17 status report: action skeleton
+
 22.11.17 status report: all sensors read correctly, weather webhook is configured so that it works as expected (requested response body template works well); 
 
+12.12.17 status report: finishing touches, WiFi checks, testing
 
 to be done: 
 
-...parsing visibility (from string to int) and setting some treshold
++ DONE! making everything connect well
 
 
-...getting location
++ DONE! getting the touch sensor
 
 
-...checking wifi
++ DONE! inspecting web api, managing webhook
 
 
-...getting it all together
++ DONE! parsing visibility (from string to int) and setting some treshold
+
+
++ DONE! checking wifi
+
+
++ DONE! getting it all together
